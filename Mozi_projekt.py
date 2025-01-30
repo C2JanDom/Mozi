@@ -4,36 +4,36 @@ nezoter=[]
 
 def nezoter_feltoltes():
     for i in range(15):
-        for n in range(10):
-            nezoter.append(random.randint(0,3))
-        for n in range(1):
-            nezoter.append("---")
-        for n in range(10):
-            nezoter.append(random.randint(0,3))
+        sorok=[]
+        for i in range(10):
+            sorok.append(random.randint(0,3))
+        sorok.append("---")
+        for i in range(10):
+            sorok.append(random.randint(0,3))
+        print(sorok)
+        nezoter.append(sorok)
 
-    print(nezoter)
-
-def bevetel(a):
+def bevetel(nezoter):
     osszeg = 0
-    felnottAr = 2500
-    diakNyugdijasAr = 2100
-    gyerekAr = 1300
-    szabadUlohelyAr = 0
-    for i in range(nezoter):
-        if a == 0:
-            osszeg += felnottAr
-        if a == 1:
-            osszeg += diakNyugdijasAr
-        if a == 2:
-            osszeg += gyerekAr
-        if a == 3:
-            osszeg += szabadUlohelyAr
+    for i in range(len(nezoter)):
+        for j in range(len(nezoter[i])):
+            if nezoter[i][j] == 0:
+                osszeg += 2500
+            if nezoter[i][j] == 1:
+                osszeg += 2100
+            if nezoter[i][j] == 2:
+                osszeg += 1300
+            if nezoter[i][j] == 3:
+                osszeg += 0
+    print("Az összes bevétel: ",osszeg, "Ft")
 
-def telitettseg(a):
+def telitettseg(nezoter):
     feltoltottUlohely=300
-    for i in range(nezoter):
-        if a == 0:
+    for i in range(len(nezoter)):
+        if nezoter[i] == 0:
             feltoltottUlohely -= 1
+
+    print(feltoltottUlohely)
 
 def felnottJegyek(a):
     felnottjegyek = 0
@@ -42,4 +42,5 @@ def felnottJegyek(a):
             felnottjegyek += 1
     print(felnottjegyek)
 
-print(nezoter_feltoltes())
+nezoter_feltoltes()
+bevetel(nezoter)
