@@ -30,17 +30,22 @@ def bevetel(nezoter):
 def telitettseg(nezoter):
     feltoltottUlohely=300
     for i in range(len(nezoter)):
-        if nezoter[i] == 0:
-            feltoltottUlohely -= 1
+        for j in range(len(nezoter[i])):
+            if nezoter[i][j] == 0:
+                feltoltottUlohely -= 1
 
     print(feltoltottUlohely)
 
-def felnottJegyek(a):
+def felnottJegyek(nezoter):
     felnottjegyek = 0
-    for a in range(nezoter):
-        if a == 3:
-            felnottjegyek += 1
-    print(felnottjegyek)
+    for i in range(len(nezoter)):
+        for j in range(len(nezoter[i])):
+            if nezoter[i][j] == 3:
+                felnottjegyek += 1
+
+    print("Az összes felnőtt jegy száma:",felnottjegyek, "db")
 
 nezoter_feltoltes()
 bevetel(nezoter)
+telitettseg(nezoter)
+felnottJegyek(nezoter)
