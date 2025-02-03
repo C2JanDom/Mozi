@@ -53,11 +53,41 @@ def felnottJegyek(nezoter):
     print("Az összes felnőtt jegy száma:",felnottjegyek, "db")
 
 def egymasMellett(a):
+    sor = 0
     if a == 2:
         for i in range(len(nezoter)):
             for j in range(len(nezoter[i])):
-                if nezoter[i][j-1] == 0 and nezoter[i][j] == 0:
-                    print(nezoter[i], "sorba van 2 hely egymás mellett.")
+                if nezoter[i][j] == 0 and nezoter[i][j-1] == 0:
+                    sor = i+1
+                    print(sor, "sorba van 2 hely egymás mellett.")
+                    return
+                
+    if a == 3:
+        for i in range(len(nezoter)):
+            for j in range(len(nezoter[i])):
+                if nezoter[i][j] == 0 and nezoter[i][j-1] == 0 and nezoter[i][j-2] == 0:
+                    sor = i+1
+                    print(sor, "sorba van 3 hely egymás mellett.")
+                    return
+    
+    if a == 4:
+        for i in range(len(nezoter)):
+            for j in range(len(nezoter[i])):
+                if nezoter[i][j] == 0 and nezoter[i][j-1] == 0 and nezoter[i][j-2] == 0 and nezoter[i][j-3] == 0:
+                    sor = i+1
+                    print(sor, "sorba van 4 hely egymás mellett.")
+                    return
+                
+    if a == 5:
+        for i in range(len(nezoter)):
+            for j in range(len(nezoter[i])):
+                if nezoter[i][j] == 0 and nezoter[i][j-1] == 0 and nezoter[i][j-2] == 0 and nezoter[i][j-3] == 0 and nezoter[i][j-4] == 0:
+                    sor = i+1
+                    print(sor, "sorba van 5 hely egymás mellett.")
+                    return
+    if sor == 0:
+        print("Nincs")
+        return
 
 nezoter_feltoltes()
 egymasMellett(a)
