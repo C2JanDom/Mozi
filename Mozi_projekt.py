@@ -34,7 +34,7 @@ def telitettseg(nezoter):
             if nezoter[i][j] == 0:
                 feltoltottUlohely -= 1
 
-    print(feltoltottUlohely)
+    print("A terem kihasználtsága", round(feltoltottUlohely/300*100, 2),"%.")
 
 def felnottJegyek(nezoter):
     felnottjegyek = 0
