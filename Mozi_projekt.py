@@ -1,5 +1,7 @@
 import random
 
+print("0 = szabadhely, 1 = gyerekjegy, 2 = diák/nyugdíjas jegy, 3 = felnőttjegy")
+
 print("Írja be hány jegyet szeretne: ")
 a = int(input())
 
@@ -24,13 +26,13 @@ def bevetel(nezoter):
     osszeg = 0
     for i in range(len(nezoter)):
         for j in range(len(nezoter[i])):
-            if nezoter[i][j] == 0:
-                osszeg += 2500
-            if nezoter[i][j] == 1:
-                osszeg += 2100
-            if nezoter[i][j] == 2:
-                osszeg += 1300
             if nezoter[i][j] == 3:
+                osszeg += 2500
+            if nezoter[i][j] == 2:
+                osszeg += 2100
+            if nezoter[i][j] == 1:
+                osszeg += 1300
+            if nezoter[i][j] == 0:
                 osszeg += 0
     print("Az összes bevétel: ",osszeg, "Ft")
 
